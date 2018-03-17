@@ -14,7 +14,7 @@ if (isset($_ENV['BOOTSTRAP_SETUP_DATABASE']) && $_ENV['BOOTSTRAP_SETUP_DATABASE'
     $filename = sprintf('%s/test.db', realpath(__DIR__ . '/../var'));
     $_ENV['DATABASE_URL'] = sprintf('sqlite:///%s', $filename);
 
-    unlink($filename);
+    @unlink($filename);
     passthru(sprintf(
         'DATABASE_URL="%s" php "%s/../bin/console" doctrine:schema:update --env=%s --force',
         $_ENV['DATABASE_URL'],
