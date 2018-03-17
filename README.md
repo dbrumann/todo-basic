@@ -1,6 +1,8 @@
 Basic todo-app
 ==============
 
+[![Build Status](https://travis-ci.org/dbrumann/todo-basic.svg?branch=master)](https://travis-ci.org/dbrumann/todo-basic)
+
 Basic todo app with minimal templating.
 
 Installation (development)
