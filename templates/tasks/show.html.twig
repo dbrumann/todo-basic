@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {# list \App\Entity\TaskList #}
+    <h1>{{ list.title }}</h1>
+
+    <ul>
+        <li><a href="{{ path('show_lists') }}">back to overview</a></li>
+        <li><a href="{{ path('add_task', { 'id': list.id }) }}">Add task</a></li>
+    </ul>
+
+    <h2>Tasks</h2>
+    <ul>
+        {% for task in list.tasks %}
+        <li>
+            <form action="{{ path('update_task', { 'id': task.id }) }}" method="post">
+                <button type="submit" name="change">{{ task.done ? '☑️' : '◻️' }}</button> {{ task.title }}
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

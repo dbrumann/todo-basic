@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Task Lists</h1>
+
+    <p>
+        <a href="{{ path('create_list') }}">Create task list</a>
+    </p>
+
+    <ul>
+    {# list \App\Entity\TaskList #}
+    {% for list in lists %}
+        <li><a href="{{ path('show_list', { 'id': list.id }) }}">{{ list.title }}</a> (open: {{ list.openTasks|length }}, done: {{ list.doneTasks|length }} )</li>
+    {% else %}
+        <li>There are no task lists. Please <a href="{{ path('create_list') }}">create one</a>.</li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

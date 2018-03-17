@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Add task to list: {{ list.title }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.title) }}
+
+        <button type="submit" name="create">Add task</button>
+    {{ form_end(form) }}
+
+{% endblock %}
