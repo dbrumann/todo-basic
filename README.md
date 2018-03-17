@@ -13,20 +13,20 @@ Installation (development)
     ```
     git clone git@github.com:dbrumann/todo-basic.git todo
     ```
-    
+
 2. Install dependencies
 
     ```
     composer install
     ```
-    
+
 3. Configure database (e.g. using SQLite)
 
     - Set DSN for Doctrine:
         
         ```
         # edit .env-file in your project directory:
-        
+
         DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db
         ```
     
@@ -36,7 +36,21 @@ Installation (development)
         bin/console doctrine:schema:update --force
         ```
 
-4. Run development server
+4. Build assets
+
+    - Install frontend dependencies
+
+        ```
+        yarn install
+        ```
+
+    - Build assets
+
+        ```
+        yarn run encore dev
+        ```
+
+5. Run development server
 
     ```
     php -S localhost:8000 -t public/

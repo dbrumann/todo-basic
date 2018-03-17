@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
+{% block content %}
 
-    <h1>Add task to list: {{ list.title }}</h1>
+    <h1 class="mb-4">
+        <a href="{{ path('show_list', {'id': list.id }) }}">Add task to {{ list.title }}</a>
+    </h1>
 
     {{ form_start(form) }}
         {{ form_row(form.title) }}
 
-        <button type="submit" name="create">Add task</button>
+        <button type="submit" class="btn btn-lg btn-block btn-primary" name="create">Add task</button>
     {{ form_end(form) }}
 
 {% endblock %}

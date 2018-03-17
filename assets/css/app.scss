@@ -1,0 +1,14 @@
+$primary: #E91E63;
+$secondary: #FFC107;
+
+@import '~bootstrap/scss/bootstrap';
+
+header {
+    color: #ffffff;
+    background: linear-gradient(to bottom right, $primary, $secondary);
+    text-align: center;
+}
+
+a:hover, .btn-link:hover {
+    text-decoration: none;
+}
