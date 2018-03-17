@@ -5,6 +5,7 @@ sudo: false
 cache:
   directories:
     - $HOME/.composer/cache/files
+    - node_modules
 
 php:
   - 7.2
@@ -13,7 +14,9 @@ before_install:
   - composer self-update
 
 install:
-  - composer install
+  - composer install --no-scripts --no-interaction
+  - yarn install --non-interactive
+  - yarn run encore dev
 
 script:
   - bin/phpunit
